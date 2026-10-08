@@ -4,5 +4,8 @@ class Rectangle:
             raise ValueError("Panjang dan lebar tidak boleh 0 atau negatif!")
         self.length = length
         self.width = width
-     def circumference(self):
+    def circumference(self):
         return 2 * (self.length + self.width)
+     def area(self):
+        return self.length * self.width
+    
