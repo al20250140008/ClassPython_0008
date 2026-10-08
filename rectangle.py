@@ -18,8 +18,9 @@ class Rectangle:
 
     def __str__(self):
         return f"Persegi panjang, panjang {self.length} cm dan lebar {self.width} cm"
-    
-    def read_positive_number(prompt):
+
+
+def read_positive_number(prompt):
     """Terus meminta input sampai pengguna memasukkan angka yang bukan 0."""
     while True:
         try:
@@ -30,3 +31,24 @@ class Rectangle:
             return value
         except ValueError:
             print("Masukkan angka yang valid.")
+
+
+def main():
+    length = read_positive_number("Masukkan panjang (cm): ")
+    width = read_positive_number("Masukkan lebar (cm): ")
+
+    rect = Rectangle(length, width)
+
+    print(rect)  # memanggil __str__ secara otomatis
+
+    # Cara 1: objek.method()
+    print(f"Keliling: {rect.circumference()} cm")
+    print(f"Luas: {rect.area()} cm2")
+
+    # Cara 2: Class.method(objek)  -> hasilnya sama
+    print(f"Keliling (Class.method): {Rectangle.circumference(rect)} cm")
+    print(f"Luas (Class.method): {Rectangle.area(rect)} cm2")
+
+
+if __name__ == "__main__":
+    main()
