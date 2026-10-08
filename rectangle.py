@@ -8,4 +8,6 @@ class Rectangle:
         return 2 * (self.length + self.width)
     def area(self):
         return self.length * self.width
+    def __str__(self):
+        return f"Persegi panjang, panjang {self.length} cm dan lebar {self.width} cm"
     
