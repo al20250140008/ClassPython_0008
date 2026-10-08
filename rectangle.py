@@ -18,3 +18,15 @@ class Rectangle:
 
     def __str__(self):
         return f"Persegi panjang, panjang {self.length} cm dan lebar {self.width} cm"
+    
+    def read_positive_number(prompt):
+    """Terus meminta input sampai pengguna memasukkan angka yang bukan 0."""
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Nilai tidak boleh 0 atau negatif. Coba lagi.")
+                continue
+            return value
+        except ValueError:
+            print("Masukkan angka yang valid.")
